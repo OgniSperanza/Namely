@@ -6,5 +6,5 @@ Namely..
 
 # Technology
 * Mobile Developmnent:  Xamarin
-* Web Development:      ASP.NET MVC (?)
+* Web Development:      (?)
 * Desktop Development:  Eletron (?) / C# (able to reuse code ^)
