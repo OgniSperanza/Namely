@@ -13,7 +13,7 @@ namespace Namely.Core.Repository
         private static List<BabyName> sampleBabyNames = new List<BabyName>()
         {
             new BabyName()
-            {
+            {                
                 Name="Jacob",
                 NickNames= new List<string>() {"Jake", "TestNickName" }
             },
@@ -29,6 +29,23 @@ namespace Namely.Core.Repository
             }
         };
 
+        public List<BabyName> GetAllBabyNames()
+        {
+            IEnumerable<BabyName> babyNames =
+                from name in sampleBabyNames
+                select name;
 
+            return babyNames.ToList<BabyName>();
+        }
+
+        public BabyName GetBabyNameByName(string babyName)
+        {
+            IEnumerable<BabyName> babyNames =
+                from name in sampleBabyNames
+                where name.Name == babyName
+                select name;
+
+            return babyNames.FirstOrDefault();
+        }
     }
 }
