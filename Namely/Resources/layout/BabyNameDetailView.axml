@@ -2,6 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+  <!--android:background="@android:color/background_light"-->
+  <TextView
+        android:text="Baby Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/babyNameTextView"
+        android:paddingTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@android:color/darker_gray" />
+    <TextView
+        android:text="Pronunciation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pronunciationTextView"
+        android:paddingTop="20dp"
+        android:textSize="16dp"
+        android:textColor="@android:color/darker_gray" />
+    <TextView
+        android:text="Nick Names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nickNamesTextView"
+        android:paddingTop="20dp"
+        android:textSize="16dp"
+        android:textColor="@android:color/darker_gray" />
+<!--<RelativeLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    Maybe add buttons for Next, previous, Like, Dislike?
+  </RelativeLayout>-->
 </LinearLayout>
