@@ -15,17 +15,20 @@ namespace Namely.Core.Repository
             new BabyName()
             {                
                 Name="Jacob",
-                NickNames= new List<string>() {"Jake", "TestNickName" }
+                NickNames= new List<string>() {"Jake", "TestNickName" },
+                Pronunciation = "pronunciation"
             },
             new BabyName()
             {
                 Name="Christianne",
-                NickNames= new List<string>() {"Chris", "Christi" }
+                NickNames= new List<string>() {"Chris", "Christi" },
+                Pronunciation = "pronunciation"
             },
             new BabyName()
             {
                 Name="Ezekiel",
-                NickNames= new List<string>() {"Zeke"}
+                NickNames= new List<string>() {"Zeke"},
+                Pronunciation = "pronunciation"
             }
         };
 
