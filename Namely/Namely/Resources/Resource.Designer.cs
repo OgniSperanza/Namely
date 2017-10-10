@@ -78,6 +78,15 @@ namespace Namely
 			// aapt resource value: 0x7f050003
 			public const int MiddleNameTextView = 2131034115;
 			
+			// aapt resource value: 0x7f050008
+			public const int TestAppButton = 2131034120;
+			
+			// aapt resource value: 0x7f050007
+			public const int TestAppEditText = 2131034119;
+			
+			// aapt resource value: 0x7f050006
+			public const int TestAppTextView = 2131034118;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

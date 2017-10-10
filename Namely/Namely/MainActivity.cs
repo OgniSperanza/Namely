@@ -12,7 +12,12 @@ namespace Namely
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            SetContentView (Resource.Layout.Main);
+
+            Button testAppButton = FindViewById<Button>(Resource.Id.TestAppButton);
+            TextView testAppEditText = FindViewById<EditText>(Resource.Id.TestAppEditText);
+
+            testAppButton.Click += delegate { testAppEditText.Text = "testing"; };
         }
     }
 }
