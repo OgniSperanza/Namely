@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Namely.Core.Service
 {
-    class BabyNameDataService
+    public class BabyNameDataService
     {
         private static NameRepository nameRepository = new NameRepository();
 

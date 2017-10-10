@@ -10,6 +10,7 @@ namespace Namely.Core.Model
     {
         public string Name { get; set; }
         public string History { get; set; }
+        public string Pronunciation { get; set; }
         public List<string> NickNames { get; set; }
         //Continue adding additional name attributes
     }
