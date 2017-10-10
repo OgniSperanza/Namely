@@ -1,50 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:minWidth="25px"
-  android:minHeight="25px">
-  <TextView
-      android:text="First Name"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/FirstNameTextView" />
-  <EditText
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/FirstNameEditText" />
-  <Button
-      android:text="Add"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/AddFNameButton" />
-  <TextView
-      android:text="Middle Name"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/MiddleNameTextView" />
-  <EditText
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/MiddleNameEditText" />
-  <Button
-      android:text="Add"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/AddMNameButton" />
-  <TextView
-    android:text="Testing App - Retrieve Name"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/TestAppTextView" />
-  <EditText
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/TestAppEditText" />
-  <Button
-      android:text="Press Me!"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/TestAppButton" />
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="First Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FirstNameTextView" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FirstNameEditText" />
+    <Button
+        android:text="Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/AddFNameButton" />
+    <TextView
+        android:text="Middle Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MiddleNameTextView" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MiddleNameEditText" />
+    <Button
+        android:text="Add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/AddMNameButton" />
+    <TextView
+        android:text="Testing App - Retrieve Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TestAppTextView" />
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:id="@+id/TestAppEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+        <Button
+            android:text="Press Me!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TestAppButton"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+  <!--<TableLayout>
+    <TableRow>
+      --><!--Add Views--><!--
+    </TableRow>
+  </TableLayout>-->
 </LinearLayout>
