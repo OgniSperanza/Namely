@@ -54,16 +54,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BabyNameDetailActivity.cs" />
+    <Compile Include="BabyNameExplorerActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ImageHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\BabyNameDetailView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\BabyNameExplorerView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
