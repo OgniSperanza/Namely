@@ -4,7 +4,8 @@ using Android.OS;
 
 namespace Namely
 {
-    [Activity(Label = "Namely", MainLauncher = true, Icon = "@drawable/icon")]
+    //[Activity(Label = "Namely", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Namely")]
     public class MainActivity : Activity
     {
         //private TextView babyNameTextView;

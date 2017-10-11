@@ -7,8 +7,8 @@ using Namely.Core.Service;
 
 namespace Namely
 {
-    //[Activity(Label = "BabyNameDetailActivity")]
-    [Activity(Label = "Baby Name Detail", MainLauncher = true)]
+    [Activity(Label = "Baby Name Detail")]
+    //[Activity(Label = "Baby Name Detail", MainLauncher = true)]
     public class BabyNameDetailActivity : Activity
     {
         private TextView babyNameTextView;
