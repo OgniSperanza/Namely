@@ -7,8 +7,8 @@
     android:minHeight="25px"
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
-  <!--android:background="@android:color/background_light"-->
-  <TextView
+<!--android:background="@android:color/background_light"-->
+    <TextView
         android:text="Baby Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

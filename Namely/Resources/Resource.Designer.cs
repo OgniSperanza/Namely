@@ -78,14 +78,17 @@ namespace Namely
 			// aapt resource value: 0x7f050006
 			public const int MiddleNameTextView = 2131034118;
 			
-			// aapt resource value: 0x7f05000b
-			public const int TestAppButton = 2131034123;
-			
 			// aapt resource value: 0x7f05000a
-			public const int TestAppEditText = 2131034122;
+			public const int NameExplorerButton = 2131034122;
 			
 			// aapt resource value: 0x7f050009
-			public const int TestAppTextView = 2131034121;
+			public const int NameExplorerTextView = 2131034121;
+			
+			// aapt resource value: 0x7f05000c
+			public const int SyncDataButton = 2131034124;
+			
+			// aapt resource value: 0x7f05000b
+			public const int SyncDataTextView = 2131034123;
 			
 			// aapt resource value: 0x7f050000
 			public const int babyNameTextView = 2131034112;
