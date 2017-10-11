@@ -12,12 +12,17 @@ namespace Namely
     {
         private ListView babyNameListView;
         private List<BabyName> allBabyNames;
-        private BabyNameDataService BabyNameDataService;
+        private BabyNameDataService babyNameDataService;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+            SetContentView(Resource.Id.babyNameListView);
+
+            babyNameDataService = new BabyNameDataService();
+
+            allBabyNames = babyNameDataService.GetAllBabyNames();
         }
     }
 }
