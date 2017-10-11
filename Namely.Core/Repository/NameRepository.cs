@@ -29,6 +29,60 @@ namespace Namely.Core.Repository
                 Name="Ezekiel",
                 NickNames= new List<string>() {"Zeke"},
                 Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="Nya",
+                //NickNames= new List<string>() {"Nya"},
+                Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="Azaria",
+                NickNames= new List<string>() {"Zari", "Ia"},
+                Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="Joshua",
+                NickNames= new List<string>() {"Josh"},
+                Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="Everly",
+                NickNames= new List<string>() {"Ev", "E"},
+                Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="Stephanie",
+                NickNames= new List<string>() {"Steph"},
+                Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="Peter",
+                NickNames= new List<string>() {"Petey"},
+                Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="William",
+                NickNames= new List<string>() {"Will", "Bill"},
+                Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="Robert",
+                NickNames= new List<string>() {"Rob", "Robby", "Dick"},
+                Pronunciation = "pronunciation"
+            },
+            new BabyName()
+            {
+                Name="Caleb",
+                //NickNames= new List<string>() {""},
+                Pronunciation = "pronunciation"
             }
         };
 

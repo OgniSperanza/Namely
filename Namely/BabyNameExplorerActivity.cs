@@ -15,12 +15,14 @@ namespace Namely
         private ListView babyNameListView;
         private List<BabyName> allBabyNames;
         private BabyNameDataService babyNameDataService;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Id.babyNameListView);
+            SetContentView(Resource.Layout.BabyNameExplorerView);
+
             babyNameListView = FindViewById<ListView>(Resource.Id.babyNameListView);
             babyNameDataService = new BabyNameDataService();
 
