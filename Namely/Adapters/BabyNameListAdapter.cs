@@ -44,11 +44,24 @@ namespace Namely.Adapters
             return position;
         }
 
+        //public override View GetView(int position, View convertView, ViewGroup parent)
+        //{
+        //    var item = items[position];
+
+        //    if (convertView == null)  
+        //    {
+        //        convertView = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
+        //    }
+
+        //    convertView.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Name;
+
+        //    return convertView;
+        //}
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var item = items[position];
 
-            if (convertView == null)  
+            if (convertView == null)
             {
                 convertView = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
             }

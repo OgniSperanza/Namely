@@ -8,8 +8,8 @@ using Namely.Adapters;
 
 namespace Namely
 {
-    //[Activity(Label = "Baby Name Explorer")]
-    [Activity(Label = "Baby Name Explorer", MainLauncher = true)]
+    [Activity(Label = "Baby Name Explorer")]
+    //[Activity(Label = "Baby Name Explorer", MainLauncher = true)]
     public class BabyNameExplorerActivity : Activity
     {
         private ListView babyNameListView;
