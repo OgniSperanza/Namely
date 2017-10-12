@@ -62,7 +62,7 @@ namespace Namely.Adapters
         {
             var item = items[position];
 
-            var imageBitmap = ImageHelper.GetImageBitmapFromUrl("");
+            var imageBitmap = ImageHelper.GetImageBitmapFromUrl("https://www.amazon.com/photos/share/0Nb7hOeLePsn8EKhJh1fMWcMx3ELVuleGf7QpfmrTRm");
 
             if (convertView == null)
             {
@@ -72,11 +72,10 @@ namespace Namely.Adapters
 
             //convertView.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Name;
             convertView.FindViewById<TextView>(Resource.Id.babyNameTextView).Text = item.Name;
-            convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", item.NickNames);
-            convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView).Text = item.Name;
+            convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", (item.NickNames is null ? new List<string>{"N/A"} : item.NickNames)); //Refactor
+            convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView).Text = item.Pronunciation;
             convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView).SetImageBitmap(imageBitmap);
-
-
+   
             return convertView;
         }
     }
