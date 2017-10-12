@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Namely.Core.Model;
+using Namely.Utility;
 
 namespace Namely.Adapters
 {
@@ -61,12 +62,20 @@ namespace Namely.Adapters
         {
             var item = items[position];
 
+            var imageBitmap = ImageHelper.GetImageBitmapFromUrl("");
+
             if (convertView == null)
             {
-                convertView = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
+                //convertView = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
+                convertView = context.LayoutInflater.Inflate(Resource.Layout.BabyNameRowView, null);
             }
 
-            convertView.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Name;
+            //convertView.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Name;
+            convertView.FindViewById<TextView>(Resource.Id.babyNameTextView).Text = item.Name;
+            convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", item.NickNames);
+            convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView).Text = item.Name;
+            convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView).SetImageBitmap(imageBitmap);
+
 
             return convertView;
         }

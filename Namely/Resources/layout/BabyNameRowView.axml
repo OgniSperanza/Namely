@@ -4,4 +4,40 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:background="#f1e5c1" />
+    android:background="#B9B9B9">
+    <ImageView
+        android:id="@+id/babyNameImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="5dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dip">
+        <TextView
+            android:text="Baby Name"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/babyNameTextView"
+            android:textSize="20dp"
+            android:textColor="@android:color/darker_gray" />
+        <TextView
+            android:text="Pronunciation"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pronunciationTextView"
+            android:textSize="16dp"
+            android:textColor="@android:color/darker_gray" />
+        <TextView
+            android:text="Nick Names"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nickNamesTextView"
+            android:textSize="16dp"
+            android:textColor="@android:color/darker_gray" />
+    </LinearLayout>
+</LinearLayout>
