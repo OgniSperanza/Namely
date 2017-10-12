@@ -62,7 +62,7 @@ namespace Namely.Adapters
         {
             var item = items[position];
 
-            var imageBitmap = ImageHelper.GetImageBitmapFromUrl("https://www.amazon.com/photos/share/0Nb7hOeLePsn8EKhJh1fMWcMx3ELVuleGf7QpfmrTRm");
+            var imageBitmap = ImageHelper.GetImageBitmapFromUrl("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
 
             if (convertView == null)
             {
