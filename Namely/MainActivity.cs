@@ -1,6 +1,8 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System;
+using Android.Content;
 
 namespace Namely
 {
@@ -14,6 +16,11 @@ namespace Namely
 
         //private BabyName selectedBabyName;
         //private BabyNameDataService dataService;
+        private Button reviewDataButton;
+        private Button syncDataButton;
+        private Button nameExplorerButton;
+
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -39,6 +46,10 @@ namespace Namely
             //babyNameTextView = FindViewById<TextView>(Resource.Id.babyNameTextView);
             //nickNameTextView = FindViewById<TextView>(Resource.Id.nickNamesTextView);
             //pronunciationTextView = FindViewById<TextView>(Resource.Id.pronunciationTextView);
+
+            reviewDataButton = FindViewById<Button>(Resource.Id.ReviewDataButton);
+            syncDataButton = FindViewById<Button>(Resource.Id.SyncDataButton);
+            nameExplorerButton = FindViewById<Button>(Resource.Id.NameExplorerButton);
         }
 
         private void BindData()
@@ -56,6 +67,12 @@ namespace Namely
         {
             //nextbutton.click += nextbutton_click
             //likebutton.click += likebutton_click
+            reviewDataButton.Click += ReviewButton_Click;
+        }
+
+        private void ReviewButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(BabyNameExplorerActivity)); //Create the review activity and replace here.
         }
 
         //private void nextbutton_click(sender, e)
