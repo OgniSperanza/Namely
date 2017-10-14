@@ -68,11 +68,26 @@ namespace Namely
             //nextbutton.click += nextbutton_click
             //likebutton.click += likebutton_click
             reviewDataButton.Click += ReviewButton_Click;
+            syncDataButton.Click += SyncDataButton_Click;
+            nameExplorerButton.Click += NameExplorerButton_Click;
+        }
+
+        private void NameExplorerButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(BabyNameExplorerActivity));
+            StartActivity(intent);
+        }
+
+        private void SyncDataButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(BabyNameExplorerActivity)); //Create the sync activity and replace here.
+            StartActivity(intent);
         }
 
         private void ReviewButton_Click(object sender, EventArgs e)
         {
             var intent = new Intent(this, typeof(BabyNameExplorerActivity)); //Create the review activity and replace here.
+            StartActivity(intent);
         }
 
         //private void nextbutton_click(sender, e)

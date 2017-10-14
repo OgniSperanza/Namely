@@ -5,6 +5,7 @@ using Android.Widget;
 using Namely.Core.Model;
 using Namely.Core.Service;
 using Namely.Adapters;
+using Android.Content;
 
 namespace Namely
 {
@@ -31,6 +32,17 @@ namespace Namely
             babyNameListView.Adapter = new BabyNameListAdapter(this, allBabyNames);
 
             babyNameListView.FastScrollEnabled = true;
+
+            babyNameListView.ItemClick += BabyNameListView_ItemClick;
+        }
+
+        private void BabyNameListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var babyName = allBabyNames[e.Position];
+
+            var intent = new Intent();
+            intent.SetClass(this, typeof(BabyNameDetailActivity));
+            Intent.PutExtra("selectedBabyName", babyName.Name);
         }
     }
 }
