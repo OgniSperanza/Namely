@@ -39,6 +39,7 @@
     <Compile Include="Interface\IImageHelper.cs" />
     <Compile Include="Model\BabyName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DbFactory.cs" />
     <Compile Include="Repository\DbHelper.cs" />
     <Compile Include="Repository\NamelyDB.cs" />
     <Compile Include="Repository\NameRepository.cs" />

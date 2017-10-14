@@ -9,6 +9,7 @@ namespace Namely.Core.Model
     public class BabyName
     {
         public string Name { get; set; }
+        public string Meaning { get; set; }//Implement this throughout
         public string History { get; set; }
         public string Pronunciation { get; set; }
         public List<string> NickNames { get; set; }
