@@ -11,13 +11,14 @@ using Android.Views;
 using Android.Widget;
 using Android.Graphics;
 using System.Net;
+using Namely.Core.Interface;
 
 namespace Namely.Utility
 {
     //Not needed yet, but adding anyways.
-   public class ImageHelper
+   public class ImageHelper : IImageHelper
     {
-        public static Bitmap GetImageBitmapFromUrl(string url)
+        public Bitmap GetImageBitmapFromUrl(string url) 
         {
             Bitmap imageBitmap = null;
 

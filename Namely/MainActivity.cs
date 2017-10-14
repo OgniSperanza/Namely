@@ -88,6 +88,7 @@ namespace Namely
         {
             var intent = new Intent(this, typeof(BabyNameExplorerActivity)); //Create the review activity and replace here.
             StartActivity(intent);
+            //StartActivityForResult(); I could pass data back and forth with this
         }
 
         //private void nextbutton_click(sender, e)

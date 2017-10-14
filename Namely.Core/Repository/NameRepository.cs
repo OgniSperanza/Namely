@@ -105,4 +105,5 @@ namespace Namely.Core.Repository
             return babyNames.FirstOrDefault();
         }
     }
+
 }
