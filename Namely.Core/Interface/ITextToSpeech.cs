@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Namely.Core.Repository
+namespace Namely.Core.Interface
 {
-    class DbFactory
+    public interface ITextToSpeech
     {
+        void Speak(string text);
     }
 }

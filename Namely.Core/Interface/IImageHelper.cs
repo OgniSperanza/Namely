@@ -2,7 +2,7 @@
 
 namespace Namely.Core.Interface
 {
-   public interface IImageHelper
+    public interface IImageHelper
     {
         Bitmap GetImageBitmapFromUrl(string url);
     }
