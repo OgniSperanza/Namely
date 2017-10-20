@@ -1,8 +1,13 @@
 ﻿using Android.App;
+
 using Android.Widget;
 using Android.OS;
 using System;
 using Android.Content;
+using Namely.Core.Repository;
+using SQLite;
+using System.IO;
+using System.Collections.Generic;
 
 namespace Namely
 {
@@ -19,7 +24,10 @@ namespace Namely
         private Button reviewDataButton;
         private Button syncDataButton;
         private Button nameExplorerButton;
-
+        private Button firstNameButton;
+        private Button middleNameButton;
+        private EditText firstNameEditText;
+        private EditText middleNameEditText;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -50,6 +58,10 @@ namespace Namely
             reviewDataButton = FindViewById<Button>(Resource.Id.ReviewDataButton);
             syncDataButton = FindViewById<Button>(Resource.Id.SyncDataButton);
             nameExplorerButton = FindViewById<Button>(Resource.Id.NameExplorerButton);
+            firstNameButton = FindViewById<Button>(Resource.Id.AddFNameButton);
+            middleNameButton = FindViewById<Button>(Resource.Id.AddMNameButton);
+            firstNameEditText = FindViewById<EditText>(Resource.Id.MiddleNameEditText);
+            middleNameEditText = FindViewById<EditText>(Resource.Id.FirstNameEditText);
         }
 
         private void BindData()
@@ -70,6 +82,46 @@ namespace Namely
             reviewDataButton.Click += ReviewButton_Click;
             syncDataButton.Click += SyncDataButton_Click;
             nameExplorerButton.Click += NameExplorerButton_Click;
+            firstNameButton.Click += FirstNameButton_Click;
+            middleNameButton.Click += MiddleNameButton_Click;
+        }
+
+        private void MiddleNameButton_Click(object sender, EventArgs e)
+        {
+            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
+                             "NamelyDb-DEV.db3");
+            //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
+
+            SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+            var dbHelper = new DbHelper(myConn);
+
+            dbHelper.SaveItemAsync(new Core.Model.BabyName
+            {
+                Name = middleNameEditText.Text,
+                History = "",
+                Meaning = "",
+                NickNames = new List<string>(),
+                Pronunciation = ""
+            });
+        }
+
+        private void FirstNameButton_Click(object sender, EventArgs e)
+        {
+                string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
+                                 "NamelyDb-DEV.db3");
+            //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
+
+            SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+            var dbHelper = new DbHelper(myConn);
+
+            dbHelper.SaveItemAsync(new Core.Model.BabyName
+            {
+                Name = firstNameEditText.Text,
+                History = "",
+                Meaning = "",
+                NickNames = new List<string>(),
+                Pronunciation = ""
+            });
         }
 
         private void NameExplorerButton_Click(object sender, EventArgs e)
