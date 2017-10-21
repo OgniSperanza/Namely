@@ -33,9 +33,9 @@ namespace Namely.Core.Repository
             return _database.Table<BabyName>().ToListAsync();
         }
 
-        public Task<List<BabyName>> GetItemsNotDoneAsync()
+        public Task<List<BabyName>> GetAllNames()
         {
-            return _database.QueryAsync<BabyName>("SELECT * FROM [NamelyDB] WHERE [Done] = 0");
+            return _database.QueryAsync<BabyName>("SELECT * FROM [NamelyDB]");
         }
 
         public Task<BabyName> GetItemAsync(int id)
