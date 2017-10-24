@@ -40,7 +40,7 @@ namespace Namely
                 //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
 
                 //SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
-                SQLiteConnection myConn = new SQLiteConnection(dbPath);
+                SQLiteConnection myConn = new SQLiteConnection(dbPath);                
                 var dbHelper = new DbHelper(myConn);
                 //allBabyNames = babyNameDataService.GetAllBabyNames();
                 //getNames = dbHelper.GetNamesAsync();

@@ -8,6 +8,7 @@ using Namely.Core.Repository;
 using SQLite;
 using System.IO;
 using System.Collections.Generic;
+using Namely.Core.Model;
 
 namespace Namely
 {
@@ -28,6 +29,7 @@ namespace Namely
         private Button middleNameButton;
         private EditText firstNameEditText;
         private EditText middleNameEditText;
+        public static SQLiteConnection connection;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -43,10 +45,29 @@ namespace Namely
             //BabyNameDataService dataService = new BabyNameDataService();
             //dataService = new BabyNameDataService();
             //selectedBabyName = dataService.GetBabyNameByName("Jacob");
-
+            CreateDatabase();
             FindViews();
             BindData();
             HandleEvents();
+        }
+
+        private void CreateDatabase()
+        {
+            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "NamelyDb-DEV.db3");
+            //string dbPath = "NamelyDb-DEV.db3";
+
+            //bool exists = File.Exists(dbPath);
+
+            //if (!exists)
+            //{    
+            //connection = new SQLiteConnection(dbPath);
+            var db = new SQLiteConnection(dbPath);
+            db.CreateTable<BabyName>();
+            //}
+            //else
+            //{
+            //    connection = new SQLiteConnection(dbPath);
+            //}
         }
 
         private void FindViews()
@@ -93,7 +114,8 @@ namespace Namely
             //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
 
             SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
-            var dbHelper = new DbHelper(myConn);
+            //var dbHelper = new DbHelper(myConn);
+            var dbHelper = new DbHelper(connection);
 
             dbHelper.SaveItemAsync(new Core.Model.BabyName
             {
@@ -112,7 +134,8 @@ namespace Namely
             //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
 
             SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
-            var dbHelper = new DbHelper(myConn);
+            //var dbHelper = new DbHelper(myConn);
+            var dbHelper = new DbHelper(connection);
 
             dbHelper.SaveItemAsync(new Core.Model.BabyName
             {
@@ -134,6 +157,14 @@ namespace Namely
         {
             var intent = new Intent(this, typeof(BabyNameExplorerActivity)); //Create the sync activity and replace here.
             StartActivity(intent);
+
+            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
+                 "NamelyDb-DEV.db3");
+            //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
+
+            SQLiteConnection myConn = new SQLiteConnection(dbPath);
+            var dbHelper = new DbHelper(myConn);
+            myConn.CreateTable<BabyName>();
         }
 
         private void ReviewButton_Click(object sender, EventArgs e)
