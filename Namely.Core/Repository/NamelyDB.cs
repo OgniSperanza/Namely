@@ -27,13 +27,13 @@ namespace Namely.Core.Repository
         //public int IsLiked { get; set; }
         //[MaxLength(50)]
         //public string LikeBy { get; set; }
-        readonly SQLiteAsyncConnection database;
+        //readonly SQLiteAsyncConnection database;
 
-        public NamelyDB(string dbPath)
-        {
-            database = new SQLiteAsyncConnection(dbPath);
-            database.CreateTableAsync<BabyName>().Wait();
-        }
+        //public NamelyDB(string dbPath)
+        //{
+        //    database = new SQLiteAsyncConnection(dbPath);
+        //    database.CreateTableAsync<BabyName>().Wait();
+        //}
 
 
     }

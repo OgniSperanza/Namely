@@ -53,6 +53,8 @@ namespace Namely
 
         private void CreateDatabase()
         {
+            try
+            {
             string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "NamelyDb-DEV.db3");
             //string dbPath = "NamelyDb-DEV.db3";
 
@@ -63,11 +65,19 @@ namespace Namely
             //connection = new SQLiteConnection(dbPath);
             var db = new SQLiteConnection(dbPath);
             db.CreateTable<BabyName>();
-            //}
-            //else
-            //{
-            //    connection = new SQLiteConnection(dbPath);
-            //}
+                //}
+                //else
+                //{
+                //    connection = new SQLiteConnection(dbPath);
+                //}
+
+
+            }
+            catch (Exception ex)
+            {
+                var debug = ex.Message + ex.InnerException;
+                throw;
+            }
         }
 
         private void FindViews()
