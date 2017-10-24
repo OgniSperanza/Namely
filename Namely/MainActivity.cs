@@ -103,8 +103,8 @@ namespace Namely
             nameExplorerButton = FindViewById<Button>(Resource.Id.NameExplorerButton);
             firstNameButton = FindViewById<Button>(Resource.Id.AddFNameButton);
             middleNameButton = FindViewById<Button>(Resource.Id.AddMNameButton);
-            firstNameEditText = FindViewById<EditText>(Resource.Id.MiddleNameEditText);
-            middleNameEditText = FindViewById<EditText>(Resource.Id.FirstNameEditText);
+            firstNameEditText = FindViewById<EditText>(Resource.Id.FirstNameEditText);
+            middleNameEditText = FindViewById<EditText>(Resource.Id.MiddleNameEditText);
         }
 
         private void BindData()
