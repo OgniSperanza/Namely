@@ -18,36 +18,49 @@ namespace Namely
     public class BabyNameExplorerActivity : Activity
     {
         private ListView babyNameListView;
-        private Task<List<BabyName>> getNames;
+        //private Task<List<BabyName>> getNames;
+        private List<BabyName> getNames;
         private List<BabyName> allBabyNames;
         //private BabyNameDataService babyNameDataService;
         //private DbHelper dbHelper;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
+            try
+            {
+                base.OnCreate(savedInstanceState);
 
-            // Create your application here
-            SetContentView(Resource.Layout.BabyNameExplorerView);
+                // Create your application here
+                SetContentView(Resource.Layout.BabyNameExplorerView);
 
-            babyNameListView = FindViewById<ListView>(Resource.Id.babyNameListView);
-            //babyNameDataService = new BabyNameDataService();
-            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
+                babyNameListView = FindViewById<ListView>(Resource.Id.babyNameListView);
+                //babyNameDataService = new BabyNameDataService();
+                string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
                                          "NamelyDb-DEV.db3");
-            //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
+                //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
 
-            SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
-            var dbHelper = new DbHelper(myConn);
-            //allBabyNames = babyNameDataService.GetAllBabyNames();
-            getNames = dbHelper.GetItemsAsync();
+                //SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+                SQLiteConnection myConn = new SQLiteConnection(dbPath);
+                var dbHelper = new DbHelper(myConn);
+                //allBabyNames = babyNameDataService.GetAllBabyNames();
+                //getNames = dbHelper.GetNamesAsync();
+                getNames = dbHelper.GetAllNames();
 
-            allBabyNames = getNames.Result;
+                allBabyNames = getNames;
 
-            babyNameListView.Adapter = new BabyNameListAdapter(this, allBabyNames);
+                babyNameListView.Adapter = new BabyNameListAdapter(this, allBabyNames);
 
-            babyNameListView.FastScrollEnabled = true;
+                babyNameListView.FastScrollEnabled = true;
 
-            babyNameListView.ItemClick += BabyNameListView_ItemClick;
+                babyNameListView.ItemClick += BabyNameListView_ItemClick;
+
+
+            }
+            catch (System.Exception ex) 
+            {
+                var debug = ex.Message + ex.InnerException;
+                throw;
+            }
         }
 
         private void BabyNameListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)

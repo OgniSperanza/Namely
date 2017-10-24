@@ -13,6 +13,7 @@ namespace Namely.Core.Repository
     public class DbHelper
     {
         readonly SQLiteAsyncConnection _database;
+        readonly SQLiteConnection _myConn;
 
         //public DbHelper()
         //{
@@ -21,21 +22,52 @@ namespace Namely.Core.Repository
         //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
         //    _database = newDb;
         //}
-
+        public DbHelper(SQLiteConnection myConn)
+        {
+            _myConn = myConn;
+        }
 
         public DbHelper(SQLiteAsyncConnection database)
         {
             _database = database;
         }
 
-        public Task<List<BabyName>> GetItemsAsync()
+        public Task<List<BabyName>> GetNamesAsync()
         {
-            return _database.Table<BabyName>().ToListAsync();
+            try
+            {
+                return _database.Table<BabyName>().ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                var debug = ex.Message + ex.InnerException;
+                throw;
+            }
         }
 
-        public Task<List<BabyName>> GetAllNames()
+        //public Task<List<BabyName>> GetAllNames()
+        //{
+        //    try
+        //    {
+        //        return _database.QueryAsync<BabyName>("SELECT * FROM [NamelyDB]");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var debug = ex.Message + ex.InnerException;
+        //        throw;
+        //    }
+        //}
+        public List<BabyName> GetAllNames()
         {
-            return _database.QueryAsync<BabyName>("SELECT * FROM [NamelyDB]");
+            try
+            {
+                return _myConn.Query<BabyName>("SELECT * FROM [NamelyDB]");
+            }
+            catch (Exception ex)
+            {
+                var debug = ex.Message + ex.InnerException;
+                throw;
+            }
         }
 
         public Task<BabyName> GetItemAsync(int id)
