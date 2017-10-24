@@ -61,7 +61,8 @@ namespace Namely.Core.Repository
         {
             try
             {
-                return _myConn.Query<BabyName>("SELECT * FROM [NamelyDB]");
+                //return _myConn.Query<BabyName>("SELECT * FROM [NamelyDB]");
+                return _myConn.Query<BabyName>("SELECT * FROM [BabyName]");
             }
             catch (Exception ex)
             {

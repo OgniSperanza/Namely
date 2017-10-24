@@ -12,66 +12,66 @@ namespace Namely.Core.Repository
     {
         private static List<BabyName> sampleBabyNames = new List<BabyName>()
         {
-            new BabyName()
-            {                
-                Name="Jacob",
-                NickNames= new List<string>() {"Jake" },
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Christianne",
-                NickNames= new List<string>() {"Chris", "Christi" },
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Ezekiel",
-                NickNames= new List<string>() {"Zeke"},
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Nya",
-                NickNames= new List<string>() {""},
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Azaria",
-                NickNames= new List<string>() {"Zari", "Ia"},
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Joshua",
-                NickNames= new List<string>() {"Josh"},
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Everly",
-                NickNames= new List<string>() {"Ev", "E"},
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Stephanie",
-                NickNames= new List<string>() {"Steph"},
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Peter",
-                NickNames= new List<string>() {"Petey"},
-                Pronunciation = "pronunciation"
-            },
-            new BabyName()
-            {
-                Name="Caleb",
-                NickNames= new List<string>() {""},
-                Pronunciation = "pronunciation"
-            }
+            //new BabyName()
+            //{                
+            //    Name="Jacob",
+            //    NickNames= new List<string>() {"Jake" },
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Christianne",
+            //    NickNames= new List<string>() {"Chris", "Christi" },
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Ezekiel",
+            //    NickNames= new List<string>() {"Zeke"},
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Nya",
+            //    NickNames= new List<string>() {""},
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Azaria",
+            //    NickNames= new List<string>() {"Zari", "Ia"},
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Joshua",
+            //    NickNames= new List<string>() {"Josh"},
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Everly",
+            //    NickNames= new List<string>() {"Ev", "E"},
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Stephanie",
+            //    NickNames= new List<string>() {"Steph"},
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Peter",
+            //    NickNames= new List<string>() {"Petey"},
+            //    Pronunciation = "pronunciation"
+            //},
+            //new BabyName()
+            //{
+            //    Name="Caleb",
+            //    NickNames= new List<string>() {""},
+            //    Pronunciation = "pronunciation"
+            //}
         };
 
         public List<BabyName> GetAllBabyNames()

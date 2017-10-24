@@ -43,7 +43,7 @@ namespace Namely
         private void BindData()
         {
             babyNameTextView.Text = selectedBabyName.Name;
-            nickNameTextView.Text = selectedBabyName.NickNames.ToString();
+            //nickNameTextView.Text = selectedBabyName.NickNames.ToString();
             pronunciationTextView.Text = selectedBabyName.Pronunciation;
 
             //ImageHelper

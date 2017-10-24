@@ -72,7 +72,7 @@ namespace Namely.Adapters
 
             //convertView.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Name;
             convertView.FindViewById<TextView>(Resource.Id.babyNameTextView).Text = item.Name;
-            convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", (item.NickNames is null ? new List<string>{"N/A"} : item.NickNames)); //Refactor
+            //convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", (item.NickNames is null ? new List<string>{"N/A"} : item.NickNames)); //Refactor
             convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView).Text = item.Pronunciation;
             convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView).SetImageBitmap(imageBitmap);
    

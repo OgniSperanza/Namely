@@ -51,6 +51,18 @@ namespace Namely
             HandleEvents();
         }
 
+        //public SQLiteConnection GetConnection()
+        //{
+        //    var dbName = "TestDB-DEV.db3";
+        //    var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        //    var path = Path.Combine(documentsPath, dbName);
+
+        //    var platform = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
+        //    var connection = new SQLiteConnection(platform, path);
+
+        //    return connection;
+        //}
+
         private void CreateDatabase()
         {
             try
@@ -132,7 +144,7 @@ namespace Namely
                 Name = middleNameEditText.Text,
                 History = "",
                 Meaning = "",
-                NickNames = new List<string>(),
+                //NickNames = new List<string>(),
                 Pronunciation = ""
             });
         }
@@ -144,15 +156,15 @@ namespace Namely
             //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
 
             SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
-            //var dbHelper = new DbHelper(myConn);
-            var dbHelper = new DbHelper(connection);
-
+            var dbHelper = new DbHelper(myConn);
+            //var dbHelper = new DbHelper(connection);
+            var test = firstNameEditText.Text;
             dbHelper.SaveItemAsync(new Core.Model.BabyName
             {
                 Name = firstNameEditText.Text,
                 History = "",
                 Meaning = "",
-                NickNames = new List<string>(),
+                //NickNames = new List<string>(),
                 Pronunciation = ""
             });
         }

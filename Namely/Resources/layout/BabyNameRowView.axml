@@ -31,13 +31,13 @@
             android:id="@+id/pronunciationTextView"
             android:textSize="16dp"
             android:textColor="#000000" />
-        <TextView
+        <!--<TextView
             android:text="Nick Names"
             android:padding="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/nickNamesTextView"
             android:textSize="16dp"
-            android:textColor="#000000" />
+            android:textColor="#000000" />-->
     </LinearLayout>
 </LinearLayout>
