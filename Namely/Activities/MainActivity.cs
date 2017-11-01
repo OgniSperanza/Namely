@@ -135,11 +135,20 @@ namespace Namely
                              "NamelyDb-DEV.db3");
             //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
 
-            SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+            //SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+            SQLiteConnection myConn = new SQLiteConnection(dbPath);
             //var dbHelper = new DbHelper(myConn);
-            var dbHelper = new DbHelper(connection);
+            var dbHelper = new DbHelper(myConn);
 
-            dbHelper.SaveItemAsync(new Core.Model.BabyName
+            //dbHelper.SaveItemAsync(new Core.Model.BabyName
+            //{
+            //    Name = middleNameEditText.Text,
+            //    History = "",
+            //    Meaning = "",
+            //    //NickNames = new List<string>(),
+            //    Pronunciation = ""
+            //});
+            dbHelper.SaveItem(new Core.Model.BabyName
             {
                 Name = middleNameEditText.Text,
                 History = "",
@@ -155,11 +164,20 @@ namespace Namely
                                  "NamelyDb-DEV.db3");
             //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
 
-            SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+            //SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+            SQLiteConnection myConn = new SQLiteConnection(dbPath);
             var dbHelper = new DbHelper(myConn);
             //var dbHelper = new DbHelper(connection);
             var test = firstNameEditText.Text;
-            dbHelper.SaveItemAsync(new Core.Model.BabyName
+            //dbHelper.SaveItemAsync(new Core.Model.BabyName
+            //{
+            //    Name = firstNameEditText.Text,
+            //    History = "",
+            //    Meaning = "",
+            //    //NickNames = new List<string>(),
+            //    Pronunciation = ""
+            //});
+            dbHelper.SaveItem(new Core.Model.BabyName
             {
                 Name = firstNameEditText.Text,
                 History = "",

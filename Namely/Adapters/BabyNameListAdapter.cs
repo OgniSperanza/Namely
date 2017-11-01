@@ -11,6 +11,9 @@ using Android.Views;
 using Android.Widget;
 using Namely.Core.Model;
 using Namely.Utility;
+using SQLite;
+using Namely.Core.Repository;
+using System.IO;
 
 namespace Namely.Adapters
 {
@@ -75,8 +78,23 @@ namespace Namely.Adapters
             //convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", (item.NickNames is null ? new List<string>{"N/A"} : item.NickNames)); //Refactor
             convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView).Text = item.Pronunciation;
             convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView).SetImageBitmap(imageBitmap);
-   
+            Button deleteName;
+            deleteName = convertView.FindViewById<Button>(Resource.Id.deleteNameButton);
+            deleteName.Click += DeleteName_Click;
             return convertView;
+        }
+
+        private void DeleteName_Click(object sender, EventArgs e)
+        {
+            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
+                                         "NamelyDb-DEV.db3");
+            //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
+
+            //SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+            SQLiteConnection myConn = new SQLiteConnection(dbPath);
+            var dbHelper = new DbHelper(myConn);
+
+            //dbHelper.DeleteItemByName()
         }
     }
 }

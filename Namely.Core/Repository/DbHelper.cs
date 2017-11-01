@@ -12,8 +12,8 @@ namespace Namely.Core.Repository
 {
     public class DbHelper
     {
-        readonly SQLiteAsyncConnection _database;
-        readonly SQLiteConnection _myConn;
+        //readonly SQLiteAsyncConnection _database;
+        readonly SQLiteConnection _db;
 
         //public DbHelper()
         //{
@@ -22,28 +22,28 @@ namespace Namely.Core.Repository
         //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
         //    _database = newDb;
         //}
-        public DbHelper(SQLiteConnection myConn)
+        public DbHelper(SQLiteConnection myDb)
         {
-            _myConn = myConn;
+            _db = myDb;
         }
 
-        public DbHelper(SQLiteAsyncConnection database)
-        {
-            _database = database;
-        }
+        //public DbHelper(SQLiteAsyncConnection database)
+        //{
+        //    _database = database;
+        //}
 
-        public Task<List<BabyName>> GetNamesAsync()
-        {
-            try
-            {
-                return _database.Table<BabyName>().ToListAsync();
-            }
-            catch (Exception ex)
-            {
-                var debug = ex.Message + ex.InnerException;
-                throw;
-            }
-        }
+        //public Task<List<BabyName>> GetNamesAsync()
+        //{
+        //    try
+        //    {
+        //        return _database.Table<BabyName>().ToListAsync();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var debug = ex.Message + ex.InnerException;
+        //        throw;
+        //    }
+        //}
 
         //public Task<List<BabyName>> GetAllNames()
         //{
@@ -62,7 +62,7 @@ namespace Namely.Core.Repository
             try
             {
                 //return _myConn.Query<BabyName>("SELECT * FROM [NamelyDB]");
-                return _myConn.Query<BabyName>("SELECT * FROM [BabyName]");
+                return _db.Query<BabyName>("SELECT * FROM [BabyName]");
             }
             catch (Exception ex)
             {
@@ -71,26 +71,44 @@ namespace Namely.Core.Repository
             }
         }
 
-        public Task<BabyName> GetItemAsync(int id)
+        public int DeleteItemByName (string babyName)
         {
-            return _database.Table<BabyName>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return _db.Delete<BabyName>(babyName);
         }
 
-        public Task<int> SaveItemAsync(BabyName item)
+        //public Task<BabyName> GetItemAsync(int id)
+        //{
+        //    return _database.Table<BabyName>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        //}
+
+        //public Task<int> SaveItemAsync(BabyName item)
+        //{
+        //    if (item.ID != 0)
+        //    {
+        //        return _database.UpdateAsync(item);
+        //    }
+        //    else
+        //    {
+        //        return _database.InsertAsync(item);
+        //    }
+        //}
+
+
+        public int SaveItem(BabyName item)
         {
             if (item.ID != 0)
             {
-                return _database.UpdateAsync(item);
+                return _db.Update(item);
             }
             else
             {
-                return _database.InsertAsync(item);
+                return _db.Insert(item);
             }
         }
 
-        public Task<int> DeleteItemAsync(BabyName item)
-        {
-            return _database.DeleteAsync(item);
-        }
+        //public Task<int> DeleteItemAsync(BabyName item)
+        //{
+        //    return _database.DeleteAsync(item);
+        //}
     }
 }

@@ -114,10 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\BabyNameListAdapter.cs" />
-    <Compile Include="BabyNameDetailActivity.cs" />
-    <Compile Include="BabyNameExplorerActivity.cs" />
+    <Compile Include="Activities\BabyNameDetailActivity.cs" />
+    <Compile Include="Activities\BabyNameExplorerActivity.cs" />
     <Compile Include="Utility\FileHelper.cs" />
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ImageHelper.cs" />

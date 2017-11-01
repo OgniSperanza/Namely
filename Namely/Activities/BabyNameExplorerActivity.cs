@@ -52,7 +52,7 @@ namespace Namely
 
                 babyNameListView.FastScrollEnabled = true;
 
-                babyNameListView.ItemClick += BabyNameListView_ItemClick;
+                //babyNameListView.ItemClick += BabyNameListView_ItemClick;
 
 
             }
@@ -63,13 +63,13 @@ namespace Namely
             }
         }
 
-        private void BabyNameListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
-        {
-            var babyName = allBabyNames[e.Position];
+        //private void BabyNameListView_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
+        //{
+        //    var babyName = allBabyNames[e.Position];
 
-            var intent = new Intent();
-            intent.SetClass(this, typeof(BabyNameDetailActivity));
-            Intent.PutExtra("selectedBabyName", babyName.Name);
-        }
+        //    var intent = new Intent();
+        //    intent.SetClass(this, typeof(BabyNameDetailActivity));
+        //    Intent.PutExtra("selectedBabyName", babyName.Name);
+        //}
     }
 }
