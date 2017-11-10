@@ -78,14 +78,46 @@ namespace Namely.Adapters
             //convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", (item.NickNames is null ? new List<string>{"N/A"} : item.NickNames)); //Refactor
             convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView).Text = item.Pronunciation;
             convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView).SetImageBitmap(imageBitmap);
+
             Button deleteName;
             deleteName = convertView.FindViewById<Button>(Resource.Id.deleteNameButton);
+            deleteName.Tag = position;
+
+            deleteName.Click -= DeleteName_Click;
             deleteName.Click += DeleteName_Click;
+
+
+            Button editName;
+            editName = convertView.FindViewById<Button>(Resource.Id.editNameButton);
+            editName.Tag = position;
+
+            editName.Click -= EditName_Click;
+            editName.Click += EditName_Click;
             return convertView;
         }
 
+        //Refactor: DRY
+        private void EditName_Click(object sender, EventArgs e)
+        {
+            var index = (int)((Button)sender).Tag;
+
+            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
+                                         "NamelyDb-DEV.db3");
+            //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
+
+            //SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+            SQLiteConnection myConn = new SQLiteConnection(dbPath);
+            var dbHelper = new DbHelper(myConn);
+
+            //dbHelper.DeleteItemByName()
+        }
+
+        //Refactor: DRY
         private void DeleteName_Click(object sender, EventArgs e)
         {
+
+            var index = (int)((Button)sender).Tag;
+
             string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
                                          "NamelyDb-DEV.db3");
             //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
