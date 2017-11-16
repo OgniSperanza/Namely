@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+<!--android:background="@android:color/background_light"-->
+  <!--REFACTOR: I will need to change the database schema to separate out first and middle names-->
+    <TextView
+        android:text="Total Names:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TotalNameCountTextView"
+        android:paddingTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@android:color/darker_gray" />
+    <TextView
+        android:text="Total First Names:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/FirstNameCountTextView"
+        android:paddingTop="20dp"
+        android:textSize="16dp"
+        android:textColor="@android:color/darker_gray" />
+    <TextView
+        android:text="Total Middle Names:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MiddleNameCountTextView"
+        android:paddingTop="20dp"
+        android:textSize="16dp"
+        android:textColor="@android:color/darker_gray" />
+
+  <!--<RelativeLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    Maybe add buttons for Next, previous, Like, Dislike?
+  </RelativeLayout>-->
+</LinearLayout>
