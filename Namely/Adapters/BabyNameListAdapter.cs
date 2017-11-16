@@ -86,7 +86,7 @@ namespace Namely.Adapters
             //deleteName.Click -= DeleteName_Click;
             //deleteName.Click += DeleteName_Click;
 
-            
+
 
             //Button editName;
             //editName = convertView.FindViewById<Button>(Resource.Id.editNameButton);
@@ -97,6 +97,7 @@ namespace Namely.Adapters
             return convertView;
         }
 
+        //REFACTOR: There must be a way to put this logic into the Activity. 
         //Refactor: DRY
         private void EditName_Click(object sender, EventArgs e)
         {

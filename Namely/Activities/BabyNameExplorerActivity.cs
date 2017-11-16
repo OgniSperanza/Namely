@@ -23,6 +23,7 @@ namespace Namely
         private List<BabyName> allBabyNames;
         //private BabyNameDataService babyNameDataService;
         //private DbHelper dbHelper;
+        private Button editNameButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -54,6 +55,8 @@ namespace Namely
 
                 babyNameListView.ItemClick += BabyNameListView_ItemClick;
 
+                editNameButton = FindViewById<Button>(Resource.Id.editNameButton);
+
             }
             catch (System.Exception ex) 
             {
@@ -62,6 +65,19 @@ namespace Namely
             }
         }
 
+        private void AssignTags()
+        {
+            foreach (var listViewItem in babyNameListView)
+            {
+
+            }
+        }
+        private void FindViews()
+        {
+            //babyNameTextView = FindViewById<TextView>(Resource.Id.babyNameTextView);
+            //nickNameTextView = FindViewById<TextView>(Resource.Id.nickNamesTextView);
+            //pronunciationTextView = FindViewById<TextView>(Resource.Id.pronunciationTextView);
+        }
         private void BabyNameListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var babyName = allBabyNames[e.Position];
