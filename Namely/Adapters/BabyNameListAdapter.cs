@@ -79,20 +79,21 @@ namespace Namely.Adapters
             convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView).Text = item.Pronunciation;
             convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView).SetImageBitmap(imageBitmap);
 
-            Button deleteName;
-            deleteName = convertView.FindViewById<Button>(Resource.Id.deleteNameButton);
-            deleteName.Tag = position;
+            //Button deleteName;
+            //deleteName = convertView.FindViewById<Button>(Resource.Id.deleteNameButton);
+            //deleteName.Tag = position;
 
-            deleteName.Click -= DeleteName_Click;
-            deleteName.Click += DeleteName_Click;
+            //deleteName.Click -= DeleteName_Click;
+            //deleteName.Click += DeleteName_Click;
 
+            
 
-            Button editName;
-            editName = convertView.FindViewById<Button>(Resource.Id.editNameButton);
-            editName.Tag = position;
+            //Button editName;
+            //editName = convertView.FindViewById<Button>(Resource.Id.editNameButton);
+            //editName.Tag = position;
 
-            editName.Click -= EditName_Click;
-            editName.Click += EditName_Click;
+            //editName.Click -= EditName_Click;
+            //editName.Click += EditName_Click;
             return convertView;
         }
 
