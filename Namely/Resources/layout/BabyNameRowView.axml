@@ -18,19 +18,18 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dip">
+        android:layout_height="wrap_content">
+    <!--android:text="Baby Name"
+      android:padding="1dp"-->
         <TextView
-            android:text="Baby Name"
-            android:padding="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/babyNameTextView"
             android:textSize="20dp"
             android:textColor="#000000" />
+    <!--android:text="Pronunciation"
+      android:padding="1dp"-->
         <TextView
-            android:text="Pronunciation"
-            android:padding="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pronunciationTextView"
@@ -48,8 +47,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dip">
+        android:layout_height="wrap_content">
         <Button
             android:text="Edit"
             android:layout_width="80dp"
