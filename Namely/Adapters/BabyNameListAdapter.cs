@@ -26,8 +26,8 @@ namespace Namely.Adapters
         ImageView babyNameIcon;
         TextView babyName;
         TextView babyNamePronunciation;
-        Button deleteButton;
-        Button editButton;
+        Button deleteName;
+        Button editName;
 
 
         public BabyNameListAdapter(Activity context, List<BabyName> items) : base()
@@ -75,6 +75,14 @@ namespace Namely.Adapters
 
             babyNameIcon = convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView);
             babyNameIcon.SetImageBitmap(imageBitmap);
+
+            deleteName = convertView.FindViewById<Button>(Resource.Id.deleteNameButton);
+            deleteName.Tag = position;
+
+            editName = convertView.FindViewById<Button>(Resource.Id.editNameButton);
+            editName.Tag = position;
+
+            convertView.Tag = position;
 
             return convertView;
         }
