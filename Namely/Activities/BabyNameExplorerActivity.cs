@@ -19,7 +19,6 @@ namespace Namely
     {
         private ListView babyNameListView;
         //private Task<List<BabyName>> getNames;
-        private List<BabyName> getNames;
         private List<BabyName> allBabyNames;
         //private BabyNameDataService babyNameDataService;
         //private DbHelper dbHelper;
@@ -31,7 +30,6 @@ namespace Namely
             {
                 base.OnCreate(savedInstanceState);
 
-                // Create your application here
                 SetContentView(Resource.Layout.BabyNameExplorerView);
 
                 babyNameListView = FindViewById<ListView>(Resource.Id.babyNameListView);
@@ -45,13 +43,12 @@ namespace Namely
                 var dbHelper = new DbHelper(myConn);
                 //allBabyNames = babyNameDataService.GetAllBabyNames();
                 //getNames = dbHelper.GetNamesAsync();
-                getNames = dbHelper.GetAllNames();
 
-                allBabyNames = getNames;
+                allBabyNames = dbHelper.GetAllNames();
 
                 babyNameListView.Adapter = new BabyNameListAdapter(this, allBabyNames);
 
-                babyNameListView.FastScrollEnabled = true;
+                //babyNameListView.FastScrollEnabled = true;
 
                 babyNameListView.ItemClick += BabyNameListView_ItemClick;
 
@@ -65,13 +62,14 @@ namespace Namely
             }
         }
 
-        private void AssignTags()
-        {
-            foreach (var listViewItem in babyNameListView)
-            {
+        //private void AssignTags()
+        //{
+        //    foreach (var listViewItem in babyNameListView)
+        //    {
 
-            }
-        }
+        //    }
+        //}
+
         private void FindViews()
         {
             //babyNameTextView = FindViewById<TextView>(Resource.Id.babyNameTextView);
