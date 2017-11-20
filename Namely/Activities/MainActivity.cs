@@ -16,12 +16,6 @@ namespace Namely
     //[Activity(Label = "Namely")]
     public class MainActivity : Activity
     {
-        //private TextView babyNameTextView;
-        //private TextView nickNameTextView;
-        //private TextView pronunciationTextView;
-
-        //private BabyName selectedBabyName;
-        //private BabyNameDataService dataService;
         private Button reviewDataButton;
         private Button syncDataButton;
         private Button nameExplorerButton;
@@ -38,51 +32,20 @@ namespace Namely
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
 
-            //Button testAppButton = FindViewById<Button>(Resource.Id.TestAppButton);
-            //TextView testAppEditText = FindViewById<EditText>(Resource.Id.TestAppEditText);
-
-            //testAppButton.Click += delegate { testAppEditText.Text = "testing"; };
-            //BabyNameDataService dataService = new BabyNameDataService();
-            //dataService = new BabyNameDataService();
-            //selectedBabyName = dataService.GetBabyNameByName("Jacob");
             CreateDatabase();
             FindViews();
             BindData();
             HandleEvents();
         }
 
-        //public SQLiteConnection GetConnection()
-        //{
-        //    var dbName = "TestDB-DEV.db3";
-        //    var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-        //    var path = Path.Combine(documentsPath, dbName);
-
-        //    var platform = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
-        //    var connection = new SQLiteConnection(platform, path);
-
-        //    return connection;
-        //}
-
         private void CreateDatabase()
         {
             try
             {
-            string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "NamelyDb-DEV.db3");
-            //string dbPath = "NamelyDb-DEV.db3";
+                string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "NamelyDb-DEV.db3");
 
-            //bool exists = File.Exists(dbPath);
-
-            //if (!exists)
-            //{    
-            //connection = new SQLiteConnection(dbPath);
-            var db = new SQLiteConnection(dbPath);
-            db.CreateTable<BabyName>();
-                //}
-                //else
-                //{
-                //    connection = new SQLiteConnection(dbPath);
-                //}
-
+                var db = new SQLiteConnection(dbPath);
+                db.CreateTable<BabyName>();
 
             }
             catch (Exception ex)
@@ -112,9 +75,6 @@ namespace Namely
             //babyNameTextView.Text = selectedBabyName.Name;
             //nickNameTextView.Text = selectedBabyName.NickNames.ToString();
             //pronunciationTextView.Text = selectedBabyName.Pronunciation;
-
-            //ImageHelper
-            //Set ImageView
         }
 
         //Finish Implementing Below:
@@ -140,14 +100,6 @@ namespace Namely
             //var dbHelper = new DbHelper(myConn);
             var dbHelper = new DbHelper(myConn);
 
-            //dbHelper.SaveItemAsync(new Core.Model.BabyName
-            //{
-            //    Name = middleNameEditText.Text,
-            //    History = "",
-            //    Meaning = "",
-            //    //NickNames = new List<string>(),
-            //    Pronunciation = ""
-            //});
             dbHelper.SaveItem(new Core.Model.BabyName
             {
                 Name = middleNameEditText.Text,
@@ -158,25 +110,17 @@ namespace Namely
             });
         }
 
+        //REFACTOR: DRY, button click logic is almost identical
         private void FirstNameButton_Click(object sender, EventArgs e)
         {
                 string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),
                                  "NamelyDb-DEV.db3");
-            //    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
 
-            //SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
             SQLiteConnection myConn = new SQLiteConnection(dbPath);
             var dbHelper = new DbHelper(myConn);
             //var dbHelper = new DbHelper(connection);
             var test = firstNameEditText.Text;
-            //dbHelper.SaveItemAsync(new Core.Model.BabyName
-            //{
-            //    Name = firstNameEditText.Text,
-            //    History = "",
-            //    Meaning = "",
-            //    //NickNames = new List<string>(),
-            //    Pronunciation = ""
-            //});
+
             dbHelper.SaveItem(new Core.Model.BabyName
             {
                 Name = firstNameEditText.Text,
@@ -213,12 +157,73 @@ namespace Namely
             StartActivity(intent);
             //StartActivityForResult(); I could pass data back and forth with this
         }
-
-        //private void nextbutton_click(sender, e)
-        //{ do something }
-
-        //private void likebutton_click(sender, e)
-        //{ do something }
     }
 }
 
+#region Old Code
+//private TextView babyNameTextView;
+//private TextView nickNameTextView;
+//private TextView pronunciationTextView;
+
+//private BabyName selectedBabyName;
+//private BabyNameDataService dataService;
+
+//Button testAppButton = FindViewById<Button>(Resource.Id.TestAppButton);
+//TextView testAppEditText = FindViewById<EditText>(Resource.Id.TestAppEditText);
+
+//testAppButton.Click += delegate { testAppEditText.Text = "testing"; };
+//BabyNameDataService dataService = new BabyNameDataService();
+//dataService = new BabyNameDataService();
+//selectedBabyName = dataService.GetBabyNameByName("Jacob");
+
+//private void nextbutton_click(sender, e)
+//{ do something }
+
+//private void likebutton_click(sender, e)
+//{ do something }
+
+//dbHelper.SaveItemAsync(new Core.Model.BabyName
+//{
+//    Name = firstNameEditText.Text,
+//    History = "",
+//    Meaning = "",
+//    //NickNames = new List<string>(),
+//    Pronunciation = ""
+//});
+
+//    SQLiteAsyncConnection newDb = new SQLiteAsyncConnection(dbPath);
+
+//SQLiteAsyncConnection myConn = new SQLiteAsyncConnection(dbPath);
+
+//dbHelper.SaveItemAsync(new Core.Model.BabyName
+//{
+//    Name = middleNameEditText.Text,
+//    History = "",
+//    Meaning = "",
+//    //NickNames = new List<string>(),
+//    Pronunciation = ""
+//});
+//string dbPath = "NamelyDb-DEV.db3";
+
+//bool exists = File.Exists(dbPath);
+
+//if (!exists)
+//{    
+//connection = new SQLiteConnection(dbPath);
+//}
+//else
+//{
+//    connection = new SQLiteConnection(dbPath);
+//}
+//public SQLiteConnection GetConnection()
+//{
+//    var dbName = "TestDB-DEV.db3";
+//    var documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+//    var path = Path.Combine(documentsPath, dbName);
+
+//    var platform = new SQLite.Net.Platform.XamarinAndroid.SQLitePlatformAndroid();
+//    var connection = new SQLiteConnection(platform, path);
+
+//    return connection;
+//}
+#endregion
