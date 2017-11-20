@@ -19,7 +19,7 @@ namespace Namely.Adapters
 {
     class BabyNameListAdapter : BaseAdapter<BabyName>
     {
-        List<BabyName> items;
+        List<BabyName> babyNameList;
         Activity context;
 
         //RowView controls
@@ -33,13 +33,13 @@ namespace Namely.Adapters
         public BabyNameListAdapter(Activity context, List<BabyName> items) : base()
         {
             this.context = context;
-            this.items = items;
+            this.babyNameList = items;
         }
         public override BabyName this[int position]
         {
             get
             {
-                return items[position];
+                return babyNameList[position];
             }
         }
 
@@ -47,18 +47,18 @@ namespace Namely.Adapters
         {
             get
             {
-                return items.Count;
+                return babyNameList.Count;
             }
         }
 
         public override long GetItemId(int position)
         {
-            return position;
+            return babyNameList[position].ID;
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var item = items[position];
+            var currentBabyName = babyNameList[position];
 
             var imageBitmap = new ImageHelper().GetImageBitmapFromUrl("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
 
@@ -68,10 +68,10 @@ namespace Namely.Adapters
             }
 
             babyName = convertView.FindViewById<TextView>(Resource.Id.babyNameTextView);
-            babyName.Text = item.Name;
+            babyName.Text = currentBabyName.Name;
             
             babyNamePronunciation = convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView);
-            babyNamePronunciation.Text = item.Pronunciation;
+            babyNamePronunciation.Text = currentBabyName.Pronunciation;
 
             babyNameIcon = convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView);
             babyNameIcon.SetImageBitmap(imageBitmap);

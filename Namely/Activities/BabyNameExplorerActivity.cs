@@ -49,7 +49,7 @@ namespace Namely
                 babyNameListView.Adapter = new BabyNameListAdapter(this, allBabyNames);
 
                 //babyNameListView.FastScrollEnabled = true;
-                babyNameListView.ItemClick -= BabyNameListView_ItemClick;
+
                 babyNameListView.ItemClick += BabyNameListView_ItemClick;
 
                 editNameButton = FindViewById<Button>(Resource.Id.editNameButton);
@@ -60,6 +60,15 @@ namespace Namely
                 var debug = ex.Message + ex.InnerException;
                 throw;
             }
+        }
+
+        private void BabyNameListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var babyName = allBabyNames[e.Position];
+
+            var intent = new Intent();
+            intent.SetClass(this, typeof(BabyNameDetailActivity));
+            Intent.PutExtra("selectedBabyName", babyName.Name);
         }
 
         //private void AssignTags()
@@ -76,13 +85,6 @@ namespace Namely
             //nickNameTextView = FindViewById<TextView>(Resource.Id.nickNamesTextView);
             //pronunciationTextView = FindViewById<TextView>(Resource.Id.pronunciationTextView);
         }
-        private void BabyNameListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            var babyName = allBabyNames[e.Position];
 
-            var intent = new Intent();
-            intent.SetClass(this, typeof(BabyNameDetailActivity));
-            Intent.PutExtra("selectedBabyName", babyName.Name);
-        }
     }
 }
