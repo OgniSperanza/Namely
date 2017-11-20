@@ -22,6 +22,14 @@ namespace Namely.Adapters
         List<BabyName> items;
         Activity context;
 
+        //RowView controls
+        ImageView babyNameIcon;
+        TextView babyName;
+        TextView babyNamePronunciation;
+        Button deleteButton;
+        Button editButton;
+
+
         public BabyNameListAdapter(Activity context, List<BabyName> items) : base()
         {
             this.context = context;
@@ -56,15 +64,17 @@ namespace Namely.Adapters
 
             if (convertView == null)
             {
-                //convertView = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
                 convertView = context.LayoutInflater.Inflate(Resource.Layout.BabyNameRowView, null);
             }
 
-            //convertView.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Name;
-            convertView.FindViewById<TextView>(Resource.Id.babyNameTextView).Text = item.Name;
-            //convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", (item.NickNames is null ? new List<string>{"N/A"} : item.NickNames)); //Refactor
-            convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView).Text = item.Pronunciation;
-            convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView).SetImageBitmap(imageBitmap);
+            babyName = convertView.FindViewById<TextView>(Resource.Id.babyNameTextView);
+            babyName.Text = item.Name;
+            
+            babyNamePronunciation = convertView.FindViewById<TextView>(Resource.Id.pronunciationTextView);
+            babyNamePronunciation.Text = item.Pronunciation;
+
+            babyNameIcon = convertView.FindViewById<ImageView>(Resource.Id.babyNameImageView);
+            babyNameIcon.SetImageBitmap(imageBitmap);
 
             return convertView;
         }
@@ -73,6 +83,10 @@ namespace Namely.Adapters
 }
 
 #region Testing/Old Code
+//convertView.FindViewById<TextView>(Resource.Id.nickNamesTextView).Text = String.Join(", ", (item.NickNames is null ? new List<string>{"N/A"} : item.NickNames)); //Refactor
+//convertView = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
+//convertView.FindViewById<TextView>(Android.Resource.Id.Text1).Text = item.Name;
+
 //Button deleteName;
 //deleteName = convertView.FindViewById<Button>(Resource.Id.deleteNameButton);
 //deleteName.Tag = position;

@@ -49,7 +49,7 @@ namespace Namely
                 babyNameListView.Adapter = new BabyNameListAdapter(this, allBabyNames);
 
                 //babyNameListView.FastScrollEnabled = true;
-
+                babyNameListView.ItemClick -= BabyNameListView_ItemClick;
                 babyNameListView.ItemClick += BabyNameListView_ItemClick;
 
                 editNameButton = FindViewById<Button>(Resource.Id.editNameButton);
