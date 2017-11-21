@@ -36,8 +36,6 @@ namespace Namely.Adapters
         View currentConvertView;
         int currentPosition;
 
-
-
         public BabyNameListAdapter(Activity context, List<BabyName> items) : base()
         {
             this.context = context;
@@ -105,11 +103,11 @@ namespace Namely.Adapters
             currentConvertView.Tag = currentPosition;
         }
 
-        private void HandleEvents()
-        {
-            EventHandler EditName_Click = null;
-            editName.Click += EditName_Click;
-        }
+        //private void HandleEvents()
+        //{
+        //    EventHandler EditName_Click = null;
+        //    editName.Click += EditName_Click;
+        //}
 
     }
 }

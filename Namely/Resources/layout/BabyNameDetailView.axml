@@ -8,7 +8,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
 <!--android:background="@android:color/background_light"-->
-    <EditText
+    <TextView
         android:text="Baby Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         android:paddingTop="20dp"
         android:textSize="20dp"
         android:textColor="@android:color/darker_gray" />
-    <EditText
+    <TextView
         android:text="Pronunciation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +24,7 @@
         android:paddingTop="20dp"
         android:textSize="16dp"
         android:textColor="@android:color/darker_gray" />
-    <EditText
+    <TextView
         android:text="Nick Names"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

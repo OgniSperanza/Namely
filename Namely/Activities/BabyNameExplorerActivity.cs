@@ -74,7 +74,9 @@ namespace Namely
 
         private void HandleEvents()
         {
-            //babyNameListView.ItemClick += BabyNameListView_ItemClick; //REFACTOR: Currently EditButton opens detail view. 
+            babyNameListView.ItemClick += BabyNameListView_ItemClick; //REFACTOR: Currently EditButton opens detail view. 
+            
+            //This throws an error, I need to loop through all rows and add the event, somehow
             //editNameButton.Click += EditNameButton_Click;
         }
 
@@ -105,7 +107,9 @@ namespace Namely
 
             var intent = new Intent();
             intent.SetClass(this, typeof(BabyNameDetailActivity));
-            Intent.PutExtra("selectedBabyName", babyName.Name);
+            intent.PutExtra("selectedBabyName", babyName.Name);
+
+            StartActivity(intent);
         }
     }
 }

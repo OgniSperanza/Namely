@@ -52,11 +52,15 @@
             android:text="Edit"
             android:layout_width="80dp"
             android:layout_height="50dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:id="@+id/editNameButton"
             android:layout_alignParentRight="true" />
         <Button
             android:text="Delete"
             android:layout_width="80dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:layout_height="50dp"
             android:id="@+id/deleteNameButton"
             android:layout_alignParentRight="true" />

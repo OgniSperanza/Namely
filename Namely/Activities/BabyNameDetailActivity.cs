@@ -1,5 +1,6 @@
 ﻿
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Widget;
 using Namely.Core.Model;
@@ -23,10 +24,13 @@ namespace Namely
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.BabyNameDetailView);
-
+            selectedBabyName = new BabyName()
+            {
+                Name = Intent.GetStringExtra("selectedBabyName")
+            };
             //BabyNameDataService dataService = new BabyNameDataService();
             dataService = new BabyNameDataService();
-            selectedBabyName = dataService.GetBabyNameByName("Jacob");
+            //selectedBabyName = dataService.GetBabyNameByName("Shit");
 
             FindViews();
             BindData();
