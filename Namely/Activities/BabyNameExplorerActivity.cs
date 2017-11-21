@@ -82,11 +82,7 @@ namespace Namely
 
         private void EditNameButton_Click(object sender, System.EventArgs e)
         {
-            var babyName = allBabyNames[(int)((Button)sender).Tag];
 
-            var intent = new Intent();
-            intent.SetClass(this, typeof(BabyNameDetailActivity));
-            Intent.PutExtra("selectedBabyName", babyName.Name);
         }
 
         private void GetData()
@@ -102,9 +98,8 @@ namespace Namely
 
         private void BabyNameListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //REFACTOR: Figure out why this event is ignored and how to fix it.
             var babyName = allBabyNames[e.Position];
-
+            
             var intent = new Intent();
             intent.SetClass(this, typeof(BabyNameDetailActivity));
             intent.PutExtra("selectedBabyName", babyName.Name);
