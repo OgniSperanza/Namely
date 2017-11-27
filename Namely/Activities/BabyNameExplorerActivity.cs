@@ -56,7 +56,6 @@ namespace Namely
 
         private void BindData()
         {
-           //Testing OnClickListener
             babyNameListAdapter = new BabyNameListAdapter(this, allBabyNames);
             babyNameListAdapter.SetRowViewItemOnClickListener(this);        
             babyNameListView.Adapter = babyNameListAdapter;
@@ -70,7 +69,6 @@ namespace Namely
 
         private void HandleEvents()
         {
-            //Testing OnClick Listener
             babyNameListView.OnItemClickListener = this;
         }
 
@@ -96,7 +94,6 @@ namespace Namely
             StartActivity(intent);
         }
 
-        //Testing OnClick Listener
         public void ItemClick(View v)
         {
             int position;
@@ -104,11 +101,9 @@ namespace Namely
             switch (v.Id)
             {
                 case Resource.Id.editNameButton:
-                    //System.Diagnostics.Debug.Write("editNameButton click" + " position=" + position);
                     EditButton_Click(position);
                     break;
                 case Resource.Id.deleteNameButton:
-                    //System.Diagnostics.Debug.Write("deleteNameButton click" + " position=" + position);
                     break;
                 default:
                     BabyNameListView_ItemClick(position);
@@ -118,7 +113,6 @@ namespace Namely
 
         public void OnItemClick(AdapterView parent, View view, int position, long id)
         {
-            //System.Diagnostics.Debug.Write("RowView click");
             ItemClick(view);
         }
 
