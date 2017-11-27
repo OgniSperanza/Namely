@@ -15,10 +15,11 @@ using SQLite;
 using Namely.Core.Repository;
 using System.IO;
 using Android.Graphics;
+using static Android.Views.View;
 
 namespace Namely.Adapters
 {
-    class BabyNameListAdapter : BaseAdapter<BabyName>
+    class BabyNameListAdapter : BaseAdapter<BabyName>, IOnClickListener
     {
         List<BabyName> babyNameList;
         Activity context;
@@ -34,7 +35,7 @@ namespace Namely.Adapters
         //Configuration Variables
         BabyName currentBabyName;
         View currentConvertView;
-        int currentPosition;
+        int currentPosition;       
 
         public BabyNameListAdapter(Activity context, List<BabyName> items) : base()
         {
@@ -101,6 +102,10 @@ namespace Namely.Adapters
             deleteName.Tag = currentPosition;
             editName.Tag = currentPosition;
             currentConvertView.Tag = currentPosition;
+
+            //Testing OnClick Listener
+            deleteName.SetOnClickListener(this);
+            editName.SetOnClickListener(this);
         }
 
         //private void HandleEvents()
@@ -108,6 +113,24 @@ namespace Namely.Adapters
         //    EventHandler EditName_Click = null;
         //    editName.Click += EditName_Click;
         //}
+
+        //Testing OnClick Listener
+        private IRowViewOnClickListener onClickListener;
+
+        public interface IRowViewOnClickListener
+        {
+            void ItemClick(View v);
+        }
+
+        public void SetRowViewItemOnClickListener(IRowViewOnClickListener listener)
+        {
+            this.onClickListener = listener;
+        }
+
+        public void OnClick(View v)
+        {
+            onClickListener.ItemClick(v);
+        }
 
     }
 }
