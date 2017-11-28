@@ -124,7 +124,7 @@ namespace Namely.Adapters
 
         public void SetRowViewItemOnClickListener(IRowViewOnClickListener listener)
         {
-            this.onClickListener = listener;
+            onClickListener = listener;
         }
 
         public void OnClick(View v)
