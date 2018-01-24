@@ -1,5 +1,4 @@
 ﻿using Android.App;
-
 using Android.Widget;
 using Android.OS;
 using System;
@@ -10,6 +9,7 @@ using System.IO;
 using System.Collections.Generic;
 using Namely.Core.Model;
 
+//REFACTOR: Need to rethink the data model, need to separate first/middle names, etc. Review code notes.
 namespace Namely
 {
     [Activity(Label = "Namely", MainLauncher = true, Icon = "@drawable/icon")]
@@ -57,10 +57,6 @@ namespace Namely
 
         private void FindViews()
         {
-            //babyNameTextView = FindViewById<TextView>(Resource.Id.babyNameTextView);
-            //nickNameTextView = FindViewById<TextView>(Resource.Id.nickNamesTextView);
-            //pronunciationTextView = FindViewById<TextView>(Resource.Id.pronunciationTextView);
-
             reviewDataButton = FindViewById<Button>(Resource.Id.ReviewDataButton);
             syncDataButton = FindViewById<Button>(Resource.Id.SyncDataButton);
             nameExplorerButton = FindViewById<Button>(Resource.Id.NameExplorerButton);
@@ -77,7 +73,7 @@ namespace Namely
             //pronunciationTextView.Text = selectedBabyName.Pronunciation;
         }
 
-        //Finish Implementing Below:
+        //REFACTOR: Finish Implementing Below:
         private void HandleEvents()
         {
             //nextbutton.click += nextbutton_click
